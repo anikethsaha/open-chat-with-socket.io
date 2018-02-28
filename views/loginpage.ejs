@@ -1,0 +1,139 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title><%= title %></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="css/stylelogin.css">
+
+
+</head>
+
+
+<body>
+
+
+<!-- Mixins-->
+<!-- Pen Title-->
+<div class="pen-title">
+  <h1><%= title %></h1>
+  <span>{ Open Chat }</span>
+
+</div>
+
+<div class="container">
+  <div class="card"></div>
+  <div class="card">
+    <h1 class="title">Login</h1>
+    <form class="" action="/login" method="post">
+      <input type="hidden" name="_csrf" value="<%= _csrf %>">
+      <div class="input-container">
+        <input type="text" name="email" value="" id="#{label}" required="required"/>
+        <label for="#{label}">Username</label>
+        <div class="bar"></div>
+      </div>
+      <div class="input-container">
+        <input type="password" name="password" value="" id="#{label}" required="required"/>
+        <label for="#{label}">Password</label>
+        <div class="bar"></div>
+      </div>
+      <div class="button-container">
+        <button type="submit" style="padding: 1em;" name="button">Go</button>
+      </div>
+      <div class="footer"><a href="#">Forgot your password?</a></div>
+    </form>
+  </div>
+  <div class="card alt">
+    <div class="toggle"></div>
+    <h1 class="title">Register
+      <div class="close"></div>
+    </h1>
+
+    <form class="" action="/register" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="_csrf" value="<%= _csrf %>">
+
+      <div class="input-container">
+        <input type="text" id="#{label}" name="email" required="required"/>
+        <label for="#{label}">email</label>
+        <div class="bar"></div>
+      </div>
+      <div class="input-container">
+        <input type="text" id="#{label}" name="name" required="required"/>
+        <label for="#{label}">UserName</label>
+        <div class="bar"></div>
+      </div>
+      <div class="input-container">
+        <input type="file" name="dp" value="" style="margin: 1em auto;"  id="#{label}">
+        <label for="fileupload"> Select a file to upload</label>
+
+      </div>
+
+      <div class="input-container">
+        <input type="password" id="#{label}" name="password" required="required"/>
+        <label for="#{label}"> Password</label>
+        <div class="bar"></div>
+      </div>
+      <div class="button-container">
+        <button><span>Next</span></button>
+      </div>
+    </form>
+  </div>
+
+</div>
+<% if(errors != undefined){ %>
+<div style="    width: 20em;
+    padding: 1em;
+    background-color: #ed2553;
+    color: white;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    box-shadow: 1px 1px 15px 3px grey;
+    left: 1em;">
+
+<ul>
+
+  <% errors.forEach(function(e){ %>
+    <li style="color:white;"><%= e.msg %></li>
+  <% }) %>
+</ul>
+
+</div>
+<% } %>
+<!-- Portfolio--><a id="portfolio" href="/user" title="View all user!"><i class="fa fa-link"></i></a>
+<!-- CodePen--><a id="codepen" href="https://codepen.io/andytran/" title="Follow me!"><i class="fa fa-codepen"></i></a>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+
+
+    <script  src="js/index.js"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+
+    <script type="text/javascript">
+
+    console.log("hey1");
+
+      console.log("hey2");
+
+
+
+
+    </script>
+
+
+
+  </body>
+
+  </html>

@@ -1,0 +1,220 @@
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>NodePro | open chat</title>
+		<link href="./css/bootstrap.css" rel='stylesheet' type='text/css' />
+
+
+		<script src="js/jquery.min.js"></script>
+
+
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){
+
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+		</script>
+		 <!-- Custom Theme files -->
+		<link href="./css/styleindex.css" rel='stylesheet' type='text/css' />
+   		 <!-- Custom Theme files -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		</script>
+
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800,700' rel='stylesheet' type='text/css'>
+
+		<!----start-top-nav-script---->
+		<script>
+			$(function() {
+				var pull 		= $('#pull');
+					menu 		= $('nav ul');
+					menuHeight	= menu.height();
+				$(pull).on('click', function(e) {
+
+					menu.slideToggle();
+				});
+				$(window).resize(function(){
+	        		var w = $(window).width();
+	        		if(w > 320 && menu.is(':hidden')) {
+	        			menu.removeAttr('style');
+	        		}
+	    		});
+			});
+		</script>
+		<!----//End-top-nav-script---->
+</head>
+	<body>
+
+		<div class="header-section">
+
+			<div id="home" class="header">
+				<div class="container">
+					<div class="top-header">
+						<div class="logo">
+							<a href="#"><img src="images/logo.png" title="logo" /></a>
+						</div>
+
+						 <nav class="top-nav">
+							<ul class="top-nav">
+								<li class="active"><a href="/" class="scroll">Home </a></li>
+								<li class="page-scroll"><a href="/log" class="scroll">Login/SignIn</a></li>
+								<li class="page-scroll"><a href="/user" class="scroll">Chatroom</a></li>
+
+							</ul>
+							<a href="#" id="pull"><img src="images/nav-icon.png" title="menu" /></a>
+						</nav>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+			</div>
+
+			<script src="js/responsiveslides.min.js"></script>
+			 <script>
+			    // You can also use "$(window).load(function() {"
+			    $(function () {
+			      // Slideshow 4
+			      $("#slider4").responsiveSlides({
+			        auto: true,
+			        pager: true,
+			        nav: true,
+			        speed: 500,
+			        namespace: "callbacks",
+			        before: function () {
+			          $('.events').append("<li>before event fired.</li>");
+			        },
+			        after: function () {
+			          $('.events').append("<li>after event fired.</li>");
+			        }
+			      });
+
+			    });
+			  </script>
+
+
+			    <div class="clearfix"> </div>
+
+
+			</div>
+
+			<div id="fea" class="features">
+				<div class="container">
+					<div class="section-head text-center">
+						<h3><span class="frist"> </span>AMAZING FEATURES<span class="second"> </span></h3>
+						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta.</p>
+					</div>
+					<!----features-grids----->
+					<div class="features-grids">
+						<div class="col-md-4 features-grid">
+							<div class="features-grid-info">
+								<div class="col-md-2 features-icon">
+									<span class="f-icon0"> </span>
+								</div>
+								<div class="col-md-10 features-info">
+									<h4>Accusan timar</h4>
+									<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="features-grid-info">
+								<div class="col-md-2 features-icon">
+									<span class="f-icon1"> </span>
+								</div>
+								<div class="col-md-10 features-info">
+									<h4>Accusan timar</h4>
+									<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="features-grid-info">
+								<div class="col-md-2 features-icon">
+									<span class="f-icon2"> </span>
+								</div>
+								<div class="col-md-10 features-info">
+									<h4>Accusan timar</h4>
+									<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+
+						</div><!---end-features-grid---->
+						<div class="col-md-4 features-grid">
+							<div class="big-divice" style="margin-top: 55%;">
+								<img src="images/feature.png"  style="width: 100%;
+    border: 2px solid white;"  title="features-demo" />
+							</div>
+						</div><!---end-features-grid---->
+						<div class="col-md-4 features-grid">
+							<div class="features-grid-info">
+								<div class="col-md-2 features-icon1">
+									<span class="f-icon3"> </span>
+								</div>
+								<div class="col-md-10 features-info">
+									<h4>Accusan timar</h4>
+									<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="features-grid-info">
+								<div class="col-md-2 features-icon1">
+									<span class="f-icon4"> </span>
+								</div>
+								<div class="col-md-10 features-info">
+									<h4>Accusan timar</h4>
+									<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="features-grid-info">
+								<div class="col-md-2 features-icon1">
+									<span class="f-icon5"> </span>
+								</div>
+								<div class="col-md-10 features-info">
+									<h4>Accusan timar</h4>
+									<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+
+						</div><!---end-features-grid---->
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+
+
+
+
+				<div class="clearfix"> </div>
+
+
+			<!-----footer----->
+			<div class="footer">
+				<div class="container">
+					<div class="footer-grids">
+						<div class="col-md-3 footer-grid about-info">
+							<a href="#"><img src="images/logo.png" title="Umbrella" /></a>
+							</div>
+              <div style="margin:1em auto;"class="col-md-6 footer-grid explore">
+              			  <h1 style="color: rgba(0,0,0,.4);">Made By <a href="http://anikethsaha.me/">Aniketh Saha</a></h1>
+            </div>
+            <div id="foot-link" style="margin:2em auto;" class="col-md-9 footer-grid explore">
+              <a style="margin:auto;" href="#">Twitter</a>
+              <a href="https://www.instagram.com/anikethsaha/">Instagram</a>
+              <a href="https://www.facebook.com/aniketh.saha.5">Facebook</a>
+              <a href="https://www.linkedin.com/in/aniketh-saha-8a67aa148/">Linkedin</a>
+              <a href="https://stackoverflow.com/users/9339537/aniketh-saha">StackOverFlow</a>
+              <a href="https://github.com/anikethsaha">Github</a>
+            </div>
+
+
+
+
+					</div>
+				</div>
+			</div>
+			<!---//footer----->
+
+	</body>
+</html>

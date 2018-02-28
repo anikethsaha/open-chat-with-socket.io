@@ -1,0 +1,345 @@
+<% include header %>
+<style media="screen">
+*{
+  color: #5a5a5a;
+}
+
+
+  .connection-alert p{
+    padding: 1em;
+    background: #b3f596;
+    box-shadow: 0px 1px 14px 1px grey;
+    color: #333131;
+      display:block;
+  }
+  .connection-alert p span{
+        color: #006400d9;
+  }
+  #chatspace{
+
+min-height: 10em;
+box-sizing: border-box;
+display: -webkit-flex;
+display: flex;
+-webkit-flex-direction: column;
+flex-direction: column;
+height: 100%;
+
+/* position: absolute; */
+top: 0;
+transition: background .3s ease-out .1s;
+/* width: 100%; */
+z-index: 100;
+border-left: 1px solid rgba(0, 0, 0, 0.03);
+left: 0;
+  }
+  #chatspace p{
+
+  }
+  .my-inchat-name{
+    float: left;
+/* padding-left: 1em; */
+border: 1px solid grey;
+margin: auto;
+text-align: center;
+margin-left: 1em;
+padding: 0 .4em;
+border-radius: 4px;
+  }
+  .other-inchat-name{
+    float: right;
+/* padding-left: 1em; */
+border: 1px solid grey;
+margin: auto;
+text-align: center;
+margin-left: 1em;
+padding: 0 .4em;
+border-radius: 4px;
+  }
+  .chatHeader{
+        border-bottom: 2px solid #f5f1ee;
+    display: -webkit-flex;
+display: flex;
+box-sizing: border-box;
+height: 59px;
+width: 100%;
+-webkit-align-items: center;
+align-items: center;
+position: relative;
+z-index: 1000;
+/* border-left: 1px solid rgba(0, 0, 0, 0.08); */
+
+padding: 10px 16px;
+  }
+  .chatHeader h2{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .inputBox{
+    -webkit-align-items: flex-end;
+align-items: flex-end;
+box-sizing: border-box;
+display: -webkit-flex;
+display: flex;
+-webkit-flex-direction: row;
+flex-direction: row;
+width: 69.5%;
+position: relative;
+z-index: 2;
+background-color: #f5f1ee;
+padding: 10px 19px;
+position: fixed;
+    bottom: 0;
+  }
+  .inputBox input{
+    background-color: #ffffff;
+border-color: #fff;
+border-radius: 5px;
+border-style: solid;
+border-width: 1px;
+border: none;
+box-sizing: border-box;
+-webkit-flex: 1 1 auto;
+flex: 1 1 auto;
+font-size: 15px;
+font-weight: normal;
+line-height: 20px;
+min-height: 20px;
+min-width: 0;
+outline: none;
+width: inherit;
+padding: 10px 16px 10px 12px;
+  }
+  .inputBox button{
+    border: 0;
+padding: 0;
+margin: 0;
+background: none;
+outline: none;
+cursor: pointer;
+font-family: inherit;
+-webkit-flex: 0 0 auto;
+flex: 0 0 auto;
+opacity: 0.9;
+  }
+  .inputBox button span img{
+    width: 2em;
+    position: fixed;
+    right: 2%;
+    bottom: 2.5%;
+  }
+  .user-avatar{
+    display: flex;
+flex-direction: column;
+justify-content: center;
+margin: 10px 0 ;
+width: 100%;
+  }
+  .user-avatar img{
+    width: 50%;
+border-radius: 100%;
+margin: 0 auto 15px;
+border: 3px solid #fff;
+  }
+  .user-name{
+    border-bottom: 1px solid rgba(0,0,0,.3);
+
+  }
+  .user-name p{
+    text-align: center;
+margin-bottom: 0;
+ font-size: 2em;
+font-weight: 500;
+
+  }
+  .chatContent{
+    padding: 0 1em;
+border-bottom: 1px solid #f5f1ee;
+  }
+  .chatUserAvatar{
+        padding: 1em;
+  }
+  .chatUserAvatar img{
+    width: 100%;
+margin: auto;
+border-radius: 100%;
+  }
+  .chatMsg{
+    margin: 2em auto;
+padding-bottom: 0;
+  }
+  .chatMsg p{
+    padding-left: 0;
+vertical-align: middle;
+margin-bottom: auto;
+  }
+</style>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="seven columns">
+
+
+      </div>
+
+    </div>
+
+
+  </div>
+<div class="">
+  <div class="row">
+    <div class="four columns" style="background-color: #fed859;
+    padding: 1em;position: fixed;
+    bottom: 0;
+    top: 0;
+    left: 0;">
+        <h2 class="logo">NodePro</h2>
+
+      <div class="">
+
+        <div class="user-avatar">
+
+          <img src="/profileImages/<%= user.dp_name %>"   alt="">
+        </div>
+        <div class="user-name">
+          <p> <%= username %> </p>
+
+        </div>
+
+              <div class="u-full-width">
+                <% if(username){ %>
+                <a href="/logout" style="margin: auto;
+        text-decoration: none;
+        font-size:2em;
+        color: black;text-align:center;"><p>Logout</p></a>
+                <% } %>
+              </div>
+
+              <div class="connection-alert">
+
+              </div>
+
+      </div>
+
+
+
+
+
+    </div>
+    <div class="eight columns" style="padding: 2em 0;
+    margin-left: auto;
+    width: 69.3%;margin-left: 30.7%;
+    right: 0;">
+      <div class="chatHeader">
+          <h2>Chats</h2>
+      </div>
+
+      <div class="u-full-width" id="chatspace"style="min-height:10em;">
+        <p id="chattarget"></p>
+      </div>
+<div class="inputBox">
+  <input type="text" name="chatmsg" id="msg" class="u-full-width" value="">
+
+  <button type="submit" id="btn" name="button"><span><img src="images/send-mail.png" alt=""></span></button>
+</div>
+
+
+    </div>
+
+  </div>
+
+</div>
+<script src= "https://code.jquery.com/jquery-3.3.1.js" ></script>
+
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+  <script type="text/javascript">
+      var username = "<%= username %>";
+      var chatOutput= '';
+  </script>
+<script type="text/javascript">
+console.log(username);
+
+
+
+
+    // console.log("ready ");
+      var socket = io.connect('http://localhost:8080');
+      socket.emit('userConnectedsendData',username);
+
+
+      $('#btn').click(function(){
+        console.log($('#msg').val());
+        var dataTOSend = [];
+        dataTOSend = {
+          Msg : $('#msg').val(),
+          name : username
+        }
+        socket.emit('sendMsg',dataTOSend);
+      });
+      socket.on('getMsg',function(data){
+        console.log("on getMsg" + data);
+        if(data.senderName == username ){
+          chatOutput  = "<div class='row chatContent'>"+
+                              "<div class='three columns' style='margin:2em auto;'>"+
+                                  " <span style='float:left;'>" + data.createAt + "</span>"+
+                                  "<span class='my-inchat-name'>You</span>"+
+                              "</div>"+
+
+                              "<div style= 'text-align:right; ' class='seven columns chatMsg'>"+
+                                    "<p>" + data.msgBody + "</p>"+
+                              "</div>"+
+
+                              "<div class='two columns chatUserAvatar'>"+
+                                "<img src='/profileImages/<%= user.dp_name %>' alt=''>"+
+
+                              "</div>"+
+
+                      "</div>";
+        }else{
+          chatOutput  = "<div class='row chatContent'>"+
+                            "<div class='two columns chatUserAvatar'>"+
+                              "<img src='images/66468562db3b343617b4912256cad666.png' alt=''>"+
+
+                            "</div>"+
+                            "<div>"+
+                                  "<div class='seven columns chatMsg'>"+
+                                        "<p>" + data.msgBody + "</p>"+
+                                  "</div>"+
+                                  "<div class='three columns' style='margin:2em auto;'>"+
+                                          "<span class='other-inchat-name'>" + data.senderName +"</span>"+
+                                          " <span style='float:right'>" + data.createAt + "</span>"+
+                                  "</div>"+
+                            "</div>"+
+                        "</div>";
+        }
+
+        $('#chattarget').append(chatOutput);
+      });
+
+
+
+
+
+
+
+      socket.on('userConnected',function(d){
+        console.log("client userConnected " + d);
+        if(d == username){
+
+            $('.connection-alert').append("<p> <span>&#9673;</span><Strong> You </Strong> are Connected</p>")
+
+        }else{
+            $('.connection-alert').append("<p> <span>&#9673;</span> New User: <Strong> " + d +" </Strong> is Connected</p>")
+        }
+
+
+      });
+
+
+</script>
+<script type="text/javascript">
+// setTimeout(function() {
+//       $('.connection-alert p').fadeOut('slow');
+// }, 1000);
+
+</script>

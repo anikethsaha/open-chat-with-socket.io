@@ -1,0 +1,35 @@
+{
+  "name": "nodepro",
+  "version": "1.0.0",
+  "description": "this is just the trial",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "aniketh",
+  "license": "ISC",
+  "dependencies": {
+    "basicxss": "^1.0.0",
+    "bcrypt": "^1.0.3",
+    "body-parser": "*",
+    "busboy": "^0.2.14",
+    "connect-busboy": "0.0.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "csurf": "^1.9.0",
+    "debug-log": "^1.0.1",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "express-controller": "^0.3.2",
+    "express-sanitize-escape": "^1.1.0",
+    "express-session": "^1.15.6",
+    "express-validator": "^4.3.0",
+    "mongojs": "^2.4.1",
+    "mongoose": "^5.0.3",
+    "multer": "^1.3.0",
+    "mysql": "^2.15.0",
+    "router": "^1.3.2",
+    "socket.io": "^2.0.4",
+    "then-busboy": "^2.1.4"
+  }
+}

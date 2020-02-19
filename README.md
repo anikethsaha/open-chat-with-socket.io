@@ -7,6 +7,10 @@ this is simple open chat based on node.js with socket.io and mongodb
 ##### NPM
 ##### Please check for all the dependencies in package.json file and install them with NPM
 
+### Donation
+
+<a href="https://www.buymeacoffee.com/eydPs6n" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
+
 ## How to Use?
 Simply start your node server with the
 `

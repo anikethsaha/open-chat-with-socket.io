@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "basicxss": "^1.0.0",
-    "bcrypt": "^1.0.3",
+    "bcrypt": "^5.0.0",
     "body-parser": "*",
     "busboy": "^0.2.14",
     "connect-busboy": "0.0.2",
